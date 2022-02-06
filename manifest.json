@@ -1,0 +1,39 @@
+{
+  "Actions": [
+    {
+      "Icon": "actionIcon", 
+      "Name": "360Monitoring",
+      "States": [
+        {
+          "Image": "actionDefaultImage",
+          "TitleAlignment": "middle", 
+          "FontSize": "14"
+        }
+      ], 
+      "SupportedInMultiActions": false,
+      "Tooltip": "Number of Twitter followers",
+      "UUID": "com.startwind.360.action"
+    }
+  ], 
+  "SDKVersion": 2,
+  "Author": "Startwind",
+  "CodePath": "code.html",
+  "Description": "Show number of Twitter followers",
+  "Name": "360 Monitoring Stats",
+  "URL": "https://www.startwind.io",
+  "Version": "1.0",
+  "OS": [
+    {
+        "Platform": "mac", 
+        "MinimumVersion" : "10.11"
+    },
+    {
+        "Platform": "windows", 
+        "MinimumVersion" : "10"
+    }
+  ],
+  "Software": 
+    {
+        "MinimumVersion" : "4.1"
+    }
+}

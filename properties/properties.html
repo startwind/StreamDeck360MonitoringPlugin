@@ -1,0 +1,40 @@
+<head>
+    <meta charset="utf-8"/>
+    <title>My Property Inspector</title>
+    <link rel="stylesheet" href="sdpi.css">
+    <script src="../elgato.js"></script>
+</head>
+
+<body>
+<div class="sdpi-wrapper">
+    <div class="sdpi-item">
+        <div class="sdpi-item-label">Twitter Handles</div>
+        <input class="sdpi-item-value" id="twitterhandle" value="" placeholder="Enter your Twitter handle" onchange="sendValueToPlugin('a', 'b')">
+    </div>
+</div>
+
+<script>
+    context = connectElgatoStreamDeckSocket()
+
+    function sendValueToPlugin(value, param) {
+
+        // say the websocket connection is saved in the variable 'websocket'
+        if (websocket) {
+            // compile our JSON object.
+
+            const json = {
+                "action": "com.startwind.twitter.action",
+                "event": "sendToPlugin",
+                "context": "fromPropertiesInspector", // as received from the 'connectElgatoStreamDeckSocket' callback
+                "payload": {
+                    // here we can use ES6 object-literals to use the 'param' parameter as a JSON key. In our example this resolves to {'myIdentifier': <value>}
+                    handle: "phphatesme"
+                }
+            };
+            websocket.send(JSON.stringify(json));
+        }
+    }
+
+</script>
+
+</body>
